@@ -30,7 +30,7 @@ class cell:
                 stroka.append('*')
             else:
                 stroka.append("/n")
-        return stroka
+        return ' '.join(map(str, stroka))
 
 
 b = cell(15, 5)
