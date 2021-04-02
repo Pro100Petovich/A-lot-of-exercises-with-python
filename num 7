@@ -1,0 +1,24 @@
+class ComplexNumber:
+    def __init__(self, ch_1, ch_2, *args):
+        self.ch_1 = ch_1
+        self.ch_2 = ch_2
+        self.z = 'a + b * i'
+
+    def __add__(self, other):
+        print('Сумма комплексных чисел равна:')
+        return f'{self.ch_1 + other.ch_1} + {self.ch_2 + other.ch_2}i'
+
+    def __mul__(self, other):
+        print('Произведение комплексных чисел равна:')
+        return f'{self.ch_1 * other.ch_1 - (self.ch_2 * other.ch_2)} + {self.ch_2 * other.ch_2}i'
+
+    def __str__(self):
+        return f'{self.ch_1} + {self.ch_2}i'
+
+
+z_1 = ComplexNumber(17, 8)
+z_2 = ComplexNumber(6, 3)
+print(f'Первое комплексное число: {z_1}')
+print(f'Второе комплексное число: {z_2}')
+print(z_1 + z_2)
+print(z_1 * z_2)
