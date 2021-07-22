@@ -1,0 +1,15 @@
+class delenie:
+    def __init__(self, a, b):
+        self.ch_1 = a
+        self.ch_2 = b
+
+    @staticmethod
+    def proverka(ch_1, ch_2):
+        try:
+            return (ch_1 / ch_2)
+        except:
+            return (f"Деление на ноль недопустимо")
+
+
+c = delenie(6, 4)
+print(c.proverka(6, 4))

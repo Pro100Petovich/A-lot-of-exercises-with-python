@@ -1,0 +1,29 @@
+class Data:
+    def __init__(self, date):
+        self.date = date
+
+    @classmethod
+    def extract(cls, date):
+        arr_of_date = []
+
+        for i in date.split():
+            if i != '-' : arr_of_date.append(i)
+
+        return int(arr_of_date[0]), int(arr_of_date[1]), int(arr_of_date[2])
+
+    @staticmethod
+    def proverka(day, month, year):
+
+        if day <= 31 and month <= 12:
+            return "Всё нормально"
+        elif day > 31:
+                return 'Неправильно введен день'
+        elif month>12:
+            return 'Неправильно введен месяц'
+
+    def __str__(self):
+        return f'Текущая дата {Data.extract(self.date)}'
+
+a = Data('11 - 1 - 2001')
+print(a)
+print(a.proverka(26, 15, 2022))
