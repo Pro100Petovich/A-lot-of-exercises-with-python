@@ -1,0 +1,16 @@
+def val_checker(ch):
+    def function_1(ch_1):
+        def function_2(ch_2):
+            if ch(ch_2):
+                print(ch_1(ch_2))
+            else:
+                print(ValueError)
+
+        return function_2
+
+    return function_1
+
+
+@val_checker(lambda x: x > 0)
+def calc_cube(x):
+    return x ** 3

@@ -1,0 +1,12 @@
+def email_parse(email_address):
+    import re
+    string_re = re.split(r'\W+', email_address)
+    if len(string_re) == 3:
+        dict = {'username': string_re.pop(0), 'domain': '.'.join(string_re)}
+        return print(dict)
+    else:
+        return print(ValueError)
+
+
+if __name__ == '__main__':
+    email_parse('someone@geekbrains.ru')
